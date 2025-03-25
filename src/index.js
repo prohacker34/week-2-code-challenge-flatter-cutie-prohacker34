@@ -32,6 +32,11 @@ form.addEventListener('submit',event=>{
     form.reset()
 
 })
+let resetVotesButton=document.getElementById("reset-btn")
+resetVotesButton.addEventListener('click',()=>{
+const voteCount=document.getElementById("vote-count")
+    voteCount.textContent=0})
+
 
 
 
