@@ -1,39 +1,37 @@
 // Your code here
+let baseUrl ='https://backend-flatter-cuties.vercel.app/characters'
 
-fetch('http://localhost:3000/characters' )
+fetch( baseUrl)
 .then((res)=>(res.json()
 ))
-.then(data=>(displayCharacters(data))
+.then((characters)=>{
+    let characterBar=document.getElementById("character-bar")
+    let img=document.getElementById("image")
 
-
-)
-function displayCharacters(characters) {
-    let characterBar= document.querySelector("#character-bar")
-    characterBar.addEventListener ('mouseover',displayImages)
 
     characters.forEach(character => {
-         let name =`<span>
-     ${character.name}
-     </span>
-    `
-    characterBar.innerHTML+= name
-})}
-function displayImages( characters) { let detailInfo=document.querySelector("#detail-info")
+    let span=document.createElement('span')
+    characterBar.appendChild(span)
+     span.textContent= character.name
+
+     span.addEventListener('click',()=>(img.src=character.image
 
 
-characters.forEach((character)=>{
-    let image = `<img src="${character.image}"alt="${character.name}">`
-    detailInfo.innerHTML+=image
+
+     ))
+
+    });
 })
-
-}
-
+let form=getElementById('')
 
 
 
 
-fetch('http://localhost:3000/characters/1')
-.then((res)=>(res.json()))
-.then((data)=>{displayImages(data)})
+
+
+
+
+
+
 
 
